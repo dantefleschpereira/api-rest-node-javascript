@@ -2,6 +2,9 @@
   "name": "api-rest-node-typescript",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts":{
+    "start": "nodemon app.js"
+  },
   "repository": "https://github.com/dantefleschpereira/API-Rest-Node-Typescript",
   "author": "Dante",
   "license": "MIT",
