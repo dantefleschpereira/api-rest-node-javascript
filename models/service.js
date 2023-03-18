@@ -1,6 +1,6 @@
-const moongose = require('moongose');
+const mongoose = require('moongose');
 
-const { Schema } = moongose;
+const { Schema } = mongoose;
 
 const serviceSchema = new Schema({
     name: {
@@ -20,7 +20,7 @@ const serviceSchema = new Schema({
         required: true
     },
 },
-    { timestamp: true }
+    { timestamps: true }
 );
 
 const Service = mongoose.model("Service", serviceSchema);
