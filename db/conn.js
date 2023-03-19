@@ -8,7 +8,7 @@ async function main() {
         await mongoose.connect(
             "mongodb+srv://dantefp:kaODrV883XsDbNpf@cluster0.cyq4j0f.mongodb.net/?retryWrites=true&w=majority"
         );
-        console.log("Conectado ao banco!");
+        console.log("Conectado ao banco MongoDB!");
     } catch (error) {
         console.log(`Erro: ${error}`);
     }
