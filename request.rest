@@ -1,0 +1,12 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Algum serviço 2",
+    "description": "Alguma descrição 2",
+    "price": 1800,
+    "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
+}
+
+###
+GET http://localhost:3000/api/services
