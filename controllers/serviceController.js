@@ -36,7 +36,7 @@ const serviceController = {
             const service = await ServiceModel.findById(id);
 
             if (!service) {
-                res.status(404).json({ message: "Serviço não encontrado"});
+                res.status(404).json({ message: "Serviço não encontrado" });
                 return;
             }
             res.json(service);
@@ -45,6 +45,27 @@ const serviceController = {
             console.log(error);
 
         }
+    },
+
+    delete: async (req, res) => {
+        try {
+            const id = req.params.id;
+
+            const service = await ServiceModel.findById(id);
+
+            if (!service) {
+                res.status(404).json({ message: "Serviço não encontrado" });
+                return;
+            }
+
+            const deleteService = await ServiceModel.findByIdAndDelete(id);
+
+            res.status(200).json({ deleteService, msg: "Serviço excluído com sucesso" });
+
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
 
