@@ -36,7 +36,7 @@ const serviceController = {
             const service = await ServiceModel.findById(id);
 
             if (!service) {
-                res.status(404).json({ message: "Serviço não encontrado" });
+                res.status(404).json({ msg: "Serviço não encontrado" });
                 return;
             }
             res.json(service);
@@ -54,7 +54,7 @@ const serviceController = {
             const service = await ServiceModel.findById(id);
 
             if (!service) {
-                res.status(404).json({ message: "Serviço não encontrado" });
+                res.status(404).json({ msg: "Serviço não encontrado" });
                 return;
             }
 
@@ -80,11 +80,11 @@ const serviceController = {
         const updatedService = await ServiceModel.findByIdAndUpdate(id, service);
 
         if (!updatedService) {
-            res.status(404).json({ message: "Serviço não encontrado" });
+            res.status(404).json({ msg: "Serviço não encontrado" });
             return;
         }
 
-        res.status(200).json({service, message: "Serviço atualizado com sucesso." });
+        res.status(200).json({service, msg: "Serviço atualizado com sucesso." });
 
     },
 };

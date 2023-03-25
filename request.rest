@@ -27,3 +27,30 @@ Content-Type: application/json
     "price": 1800,
     "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
 }
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento 3",
+    "author": "João",
+    "description": "Uma festa de aniversário",
+    "budget": 1000,
+    "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg",
+    "services": [
+        {
+            "name": "ALGUM SERVIÇO 1",
+            "description": "ALGUMA descrição 1",
+            "price": 3000,
+            "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
+        },       
+        {
+            "name": "ALGUM SERVIÇO 2",
+            "description": "ALGUMA descrição 2",
+            "price": 1600,
+            "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
+        }   
+    ]
+
+}
