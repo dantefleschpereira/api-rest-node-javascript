@@ -36,7 +36,7 @@ Content-Type: application/json
     "title": "Meu evento 3",
     "author": "João",
     "description": "Uma festa de aniversário",
-    "budget": 1000,
+    "budget": 10000,
     "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg",
     "services": [
         {
@@ -60,4 +60,8 @@ GET http://localhost:3000/api/parties
 
 ###
 GET http://localhost:3000/api/parties/641f0453c70bc5885db83884
+
+###
+DELETE http://localhost:3000/api/parties/641f0453c70bc5885db83884
+
 
