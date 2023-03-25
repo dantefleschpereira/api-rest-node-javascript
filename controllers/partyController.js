@@ -84,29 +84,37 @@ const partyController = {
     },
 
     update: async (req, res) => {
-        const id = req.params.id
+        try {
+            const id = req.params.id
 
-        const party = {
-            title: req.body.title,
-            author: req.body.author,
-            description: req.body.description,
-            budget: req.body.budget,
-            image: req.body.image,
-            services: req.body.services,
+            const party = {
+                title: req.body.title,
+                author: req.body.author,
+                description: req.body.description,
+                budget: req.body.budget,
+                image: req.body.image,
+                services: req.body.services,
+            }
+
+            const updatedParty = await PartyModel.findByIdAndUpdate(id, party);
+
+            if (party.services && !checkPartyBudget(party.budget, party.services)) {
+                res.status(406).json({ msg: "O seu orçamento é insuficiente" });
+                return
+            }
+
+            if (!updatedParty) {
+                res.status(404).json({ msg: "Evento não encontrado" });
+                return;
+            }
+            res.status(200).json({ party, msg: "Evento atualizado com sucesso" });
+
+        } catch (error) {
+            console.log(error);
+
         }
-
-        const updatedParty = await PartyModel.findByIdAndUpdate(id, party);
-
-
-        if (!updatedParty) {
-            res.status(404).json({ msg: "Evento não encontrado" });
-            return;
-        }
-
-        res.status(200).json({ party, msg: "Evento atualizado com sucesso" });
     }
-};
-
+}
 
 module.exports = partyController;
 

@@ -22,7 +22,7 @@ PUT http://localhost:3000/api/services/64184990bc497014e943a73f
 Content-Type: application/json
 
 {
-    "name": "ALGUM SERVIÇO 02",
+    "name": "MY SERVICE 02",
     "description": "ALGUMA descrição 02",
     "price": 1800,
     "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
@@ -69,9 +69,9 @@ PUT http://localhost:3000/api/parties/641eff33c70bc5885db83882
 Content-Type: application/json
 
 {
-    "title": "Meu evento 2023",
-    "author": "João",
-    "description": "Uma festa de aniversário",
+    "title": "MY PARTY em 2023",
+    "author": "João Carlos",
+    "description": "Uma festa de aniversário 2023",
     "budget": 10000,
     "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
 }

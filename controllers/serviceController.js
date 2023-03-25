@@ -68,24 +68,33 @@ const serviceController = {
     },
 
     update: async (req, res) => {
-        const id = req.params.id
+        try {
+            const id = req.params.id
 
-        const service = {
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            image: req.body.image,
+            const service = {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                image: req.body.image,
+            }
+
+            const updatedService = await ServiceModel.findByIdAndUpdate(id, service);
+
+            if (party.services && !checkPartyBudget(party.budget, party.services)) {
+                res.status(406).json({ msg: "O seu orçamento é insuficiente" });
+                return
+            }
+
+            if (!updatedService) {
+                res.status(404).json({ msg: "Serviço não encontrado" });
+                return;
+            }
+
+            res.status(200).json({ service, msg: "Serviço atualizado com sucesso." });
+
+        } catch (erro) {
+            console.log(erro);
         }
-
-        const updatedService = await ServiceModel.findByIdAndUpdate(id, service);
-
-        if (!updatedService) {
-            res.status(404).json({ msg: "Serviço não encontrado" });
-            return;
-        }
-
-        res.status(200).json({service, msg: "Serviço atualizado com sucesso." });
-
     }
 };
 
