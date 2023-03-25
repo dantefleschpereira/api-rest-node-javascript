@@ -64,4 +64,14 @@ GET http://localhost:3000/api/parties/641f0453c70bc5885db83884
 ###
 DELETE http://localhost:3000/api/parties/641f0453c70bc5885db83884
 
+###
+PUT http://localhost:3000/api/parties/641eff33c70bc5885db83882
+Content-Type: application/json
 
+{
+    "title": "Meu evento 2023",
+    "author": "João",
+    "description": "Uma festa de aniversário",
+    "budget": 10000,
+    "image": "https://pt.wikipedia.org/wiki/Node.js#/media/Ficheiro:Node.js_logo.svg"
+}

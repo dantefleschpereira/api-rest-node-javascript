@@ -68,7 +68,7 @@ const serviceController = {
     },
 
     update: async (req, res) => {
-        const id = req.params.id;
+        const id = req.params.id
 
         const service = {
             name: req.body.name,
