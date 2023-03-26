@@ -1,2 +1,2 @@
-# API-Rest-Node-Typescript
- API Rest, Node e Typescript
+# API-Rest-Node-Javascript
+ API Rest, Node e Javascript
